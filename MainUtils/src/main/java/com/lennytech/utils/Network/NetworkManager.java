@@ -66,12 +66,12 @@ public class NetworkManager {
             @Override
             public void onResponse(Call<IsActiveAppResponse> call, Response<IsActiveAppResponse> response) {
                 boolean isActive = Integer.parseInt(response.body().isActive) == 0;
-                listener.onActivationDone(isActive);
+                listener.onActivationDone(isActive,response.body().block);
             }
 
             @Override
             public void onFailure(Call<IsActiveAppResponse> call, Throwable t) {
-                listener.onActivationDone(true);
+                listener.onActivationDone(true,"");
             }
         });
     }

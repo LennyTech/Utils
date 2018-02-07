@@ -5,6 +5,6 @@ package com.lennytech.utils;
  */
 
 public interface ActivationListener {
-    void onActivationDone(boolean active);
+    void onActivationDone(boolean active,String block);
 
 }
